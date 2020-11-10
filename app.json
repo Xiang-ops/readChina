@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/shopDetails/orderDetails/orderDetails",
+    "pages/orderVerify/orderVerify",
+    "pages/shopDetails/shopDetails",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

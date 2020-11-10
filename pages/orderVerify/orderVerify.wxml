@@ -1,0 +1,86 @@
+<!--pages/orderVerify/orderVerify.wxml-->
+<view  class="all" style="">
+  <view style="width:750rpx;height:120rpx;background:#FFBE5A"></view>
+  <view class="topTap">
+    <view class="arrowLeft">
+      <image src="../../pic/arrow_left.png" style="width:22rpx;height:36rpx;"></image>
+    </view>
+    <view class="tapTitle">确认订单</view>
+  </view>
+  <view style="width:750rpx;">
+      <view class="orderTitle">
+        <view style="width:676rpx;font-size:24rpx;color:#0E0D0D;">
+          张家界+凤凰古城+天门山日出云海+星空露营+古城放灯五日 房车最美文化旅行，给你一个最独特的回忆.....
+        </view>
+        <view style="width:427rpx;margin-top:17rpx;font-size:22rpx;">
+          长沙出发 | 2020-09-25 出发 2020-09-30返程2成人
+        </view>
+      </view>
+      <view class="title">
+          <view style="font-size:26rpx;color:#050505;border-bottom: 3rpx solid #EAEAEA;padding-left: 21rpx;line-height: 63rpx;">
+            出行人信息
+          </view>
+          <view class="orderInfo">
+            <view>
+              <text style="font-weight:bold;">旅客1</text>
+            </view>
+            <view>
+              <text>姓名</text>
+              <input placeholder="与证件姓名一致" style="height:63rpx;margin-left:224rpx;"></input>
+            </view>
+            <view>
+              <text>证件类型</text>
+              <view style="height:63rpx;margin-left:173rpx;">居民身份证</view>
+            </view>
+            <view>
+              <text>身份证号</text>
+              <input style="height:63rpx;margin-left:174rpx;"></input>
+            </view>
+            <view>
+              <text>手机号码</text>
+              <input style="height:63rpx;margin-left:174rpx;"></input>
+            </view>
+          </view>
+          <view class="orderInfo">
+            <view>
+              <text style="font-weight:bold;">旅客2</text>
+            </view>
+            <view>
+              <text>姓名</text>
+              <input placeholder="与证件姓名一致" style="height:63rpx;margin-left:224rpx;"></input>
+            </view>
+            <view>
+              <text>证件类型</text>
+              <view style="height:63rpx;margin-left:173rpx;">居民身份证</view>
+            </view>
+            <view>
+              <text>身份证号</text>
+              <input style="height:63rpx;margin-left:174rpx;"></input>
+            </view>
+            <view>
+              <text>手机号码</text>
+              <input style="height:63rpx;margin-left:174rpx;"></input>
+            </view>
+          </view>
+      </view>
+      <view class="lxrInfo">
+          <view class="commonStyle" style="font-size:26rpx;">
+          联系人信息
+          </view>
+          <view style="display:flex;font-size:24rpx;" class="commonStyle">
+              <text>姓名</text>
+              <input placeholder="请填写联系人姓名" style="height:63rpx;margin-left:224rpx;"></input>
+          </view>
+          <view style="display:flex;font-size:24rpx;" class="commonStyle">
+              <text>手机号</text>
+              <view style="height:63rpx;margin-left:199rpx;">138****6872</view>
+          </view>
+      </view>
+  </view>
+  <view style="width:750rpx;height:91rpx;"></view>
+  <view class="orderBottom">
+    <view class="orderPrice">总价：￥ 3900</view>
+    <view class="orderBtn">提交订单</view>
+  </view>
+</view>
+

@@ -1,0 +1,51 @@
+<!-- 商品详情页页面 -->
+<view class="all">
+  <swiper autoplay="true" style="width:750rpx;height:520rpx;">
+    <swiper-item wx:for="{{array}}" wx:item="{{item}}"  >
+      <image src="{{item}}"  style="height:520rpx;width:100%;"/>
+    </swiper-item>  
+  </swiper>
+  <view  class="detailTitle">
+  张家界+凤凰 天门山日出云海+星空露营+古城放灯
+  6日房车最美文化旅行，给你一个最独特的回忆
+  </view>
+  <view class="detailInfo">
+    <view style="font-size:21rpx;color:#3C3B3B">
+      <view style="display:flex;">
+        <view style="width:112rpx;">出发地</view>
+        <view>长沙</view>
+      </view>
+      <view style="display:flex;">
+        <view style="width:112rpx;">目的地</view>
+        <view>张家界、凤凰</view>
+      </view>
+      <view style="display:flex;">
+        <view style="width:112rpx;">出游天数</view>
+        <view>五日</view>
+      </view>
+      <view style="display:flex;">
+        <view style="width:112rpx;">参考报价</view>
+        <view>￥3</view>
+      </view> 
+    </view>
+    <view style="font-size:24rpx; margin-top:13rpx;">行程详情</view>
+  </view>
+  <view style="width:100%;height:404rpx;">
+    <image src="../../pic/D6.jpg" style="width:100%;height:404rpx;"></image>
+  </view>
+  <view class="orderInfo">
+    预定须知
+  </view>
+  <view class="order">
+    <view class="orderLeft">
+      <view><image src="../../pic/star.png" style="width:44rpx;height:44rpx;"></image></view>
+      <view style="font-size:20rpx;font-weight:bold;">收藏</view>
+    </view>
+    <view class="phoneBtn">
+      电话预定
+    </view>
+    <view class="orderBtn" bindtap="goToOrder">
+      立即预定
+    </view>
+  </view>
+</view>

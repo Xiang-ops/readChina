@@ -1,0 +1,89 @@
+/* pages/orderVerify/orderVerify.wxss */
+.all{
+  background-color:#EAEAEA;
+  width: 750rpx;
+  height: 100%;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  
+}
+.topTap{
+  display: flex;
+  width:750rpx;
+  height:88rpx;
+  font-size: 34rpx;
+  text-align: center;
+  color: #070606;
+  border-bottom: 1rpx solid #B9B9B9;
+  background-color: #FFF;
+}
+.arrowLeft{
+  margin-left: 29rpx;
+  margin-top: 26rpx;
+}
+.tapTitle{
+  margin:26rpx 0 0 249rpx;
+}
+.orderTitle{
+  width: 750rpx;  
+  padding:28rpx 0rpx 0rpx 31rpx;
+}
+.title{
+  width:735rpx;
+  margin: 15rpx auto;
+  background:#fff;
+}
+/* .orderInfo{
+  width:735rpx;
+  background:#fff;
+} */
+.orderInfo view{
+  height: 63rpx;
+  border-bottom: 3rpx solid #EAEAEA;
+  padding-left: 21rpx;
+  line-height: 63rpx;
+  display:flex;
+  font-size:24rpx;
+  color:#050202;
+}
+.lxrInfo{
+  width:735rpx;
+  margin: 38rpx auto;
+  background: #fff;
+}
+.commonStyle{
+  
+  color:#050505;
+  border-bottom: 3rpx solid #EAEAEA;
+  padding-left: 21rpx;
+  line-height: 63rpx;
+}
+
+.orderBottom{
+  width: 735rpx;
+  height: 91rpx;
+  background-color: #fff;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 7rpx;
+}
+.orderPrice{
+  height: 31rpx;
+  font-size: 27rpx;
+  color: #FFBE5A;
+  font-weight: bold;
+  margin:30rpx 0 0 20rpx;
+}
+.orderBtn{
+  width: 206rpx;
+  height: 53rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 53rpx;
+  margin:21rpx 0rpx 0rpx 274rpx;
+  background-color: #FFBE5A;
+  border-radius: 10rpx;
+}

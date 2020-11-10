@@ -1,0 +1,91 @@
+<!--pages/shopDetails/orderDetails/orderDetails.wxml-->
+<image src="../../../pic/D6.jpg" style="width:100%;height:355rpx;"></image>
+<view class="choseView">
+  <view>选择成团方式</view>
+  <view class="teamStyle" id="team">
+    <view  wx:for="{{teamData}}"  wx:key="index" bindtap="chooseTeam" data-index="{{index}}" class="{{num==index?'active':''}}">{{item}}</view>
+  </view>
+</view>
+<view class="num">
+  <view class="peopleNum">
+    <text>成人</text>
+    <view style="display:flex;margin-left:512rpx;">
+      <image src="../../../pic/-.png" style="width:30rpx;height:30rpx;" bindtap="subPeople"></image>
+      <input class="numInput" value="{{youthNum}}"></input>
+      <image src="../../../pic/+.png" style="width:30rpx;height:30rpx;"
+       bindtap="addPeople"></image>
+    </view>
+  </view>
+  <view class="peopleNum">
+    <text>儿童</text>
+    <view style="display:flex;margin-left:512rpx;">
+      <image src="../../../pic/-.png" style="width:30rpx;height:30rpx;"></image>
+      <input class="numInput" value="{{childNum}}"></input>
+      <image src="../../../pic/+.png" style="width:30rpx;height:30rpx;"></image>
+    </view>
+  </view>
+</view>
+<view class="date">
+  <view style="display:flex;">
+    <view style="width:375rpx;text-align:center;">9月</view>
+    <view style="width:375rpx;text-align:center;">10月</view>
+  </view>
+  <view class="week">
+    <view>日</view>
+    <view>一</view>
+    <view>二</view>
+    <view>三</view>
+    <view>四</view>
+    <view>五</view>
+    <view>六</view>
+  </view>
+  <view class="week">
+    <view></view>
+    <view></view>
+    <view>1</view>
+    <view>2</view>
+    <view>3</view>
+    <view>4</view>
+    <view>5</view>
+  </view>
+  <view class="week">
+    <view>6</view>
+    <view>7</view>
+    <view>8</view>
+    <view>9</view>
+    <view>10</view>
+    <view>11</view>
+    <view>12</view>
+  </view>
+  <view class="week">
+    <view>13</view>
+    <view>14</view>
+    <view>15</view>
+    <view>16</view>
+    <view>17</view>
+    <view>18</view>
+    <view>19</view>
+  </view>
+  <view class="week">
+    <view>20</view>
+    <view>21</view>
+    <view>22</view>
+    <view>23</view>
+    <view>24</view>
+    <view>25</view>
+    <view>26</view>
+  </view>
+  <view class="week">
+    <view>27</view>
+    <view>28</view>
+    <view>29</view>
+    <view>30</view>
+    <view>31</view>
+    <view></view>
+    <view></view>
+  </view>
+</view>
+<view style="width:750rpx;height:90rpx;"></view>
+<view class="orderBottom">
+  <view class="orderBtn">立即预定</view>
+</view>
