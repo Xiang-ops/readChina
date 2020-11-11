@@ -63,6 +63,14 @@ Page({
     console.log(youthNum)
   },
   /**
+   * 跳转到确认订单页面
+   */
+  goToVerify(){
+    wx.navigateTo({
+      url: '../../orderVerify/orderVerify',
+    })
+  },
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {

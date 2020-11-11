@@ -6,32 +6,33 @@
     </swiper-item>  
   </swiper>
   <view  class="detailTitle">
-  张家界+凤凰 天门山日出云海+星空露营+古城放灯
-  6日房车最美文化旅行，给你一个最独特的回忆
+  <view>{{detailData.spuName}}</view> 
+  <view>{{detailData.desc}}</view>
   </view>
+  
   <view class="detailInfo">
     <view style="font-size:21rpx;color:#3C3B3B">
       <view style="display:flex;">
         <view style="width:112rpx;">出发地</view>
-        <view>长沙</view>
+        <view>{{detailData.startPos}}</view>
       </view>
       <view style="display:flex;">
         <view style="width:112rpx;">目的地</view>
-        <view>张家界、凤凰</view>
+        <view>{{detailData.destinationPos}}</view>
       </view>
       <view style="display:flex;">
         <view style="width:112rpx;">出游天数</view>
-        <view>五日</view>
+        <view>三日</view>
       </view>
       <view style="display:flex;">
         <view style="width:112rpx;">参考报价</view>
-        <view>￥3</view>
+        <view>￥{{detailData.price}}</view>
       </view> 
     </view>
     <view style="font-size:24rpx; margin-top:13rpx;">行程详情</view>
   </view>
   <view style="width:100%;height:404rpx;">
-    <image src="../../pic/D6.jpg" style="width:100%;height:404rpx;"></image>
+    <image src="{{detailData.banner}}" style="width:100%;height:404rpx;"></image>
   </view>
   <view class="orderInfo">
     预定须知

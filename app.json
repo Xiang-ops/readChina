@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/shopDetails/shopDetails",
     "pages/shopDetails/orderDetails/orderDetails",
     "pages/orderVerify/orderVerify",
-    "pages/shopDetails/shopDetails",
+    
     "pages/index/index",
     "pages/logs/logs"
   ],

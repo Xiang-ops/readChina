@@ -1,19 +1,19 @@
 <!--pages/orderVerify/orderVerify.wxml-->
 <view  class="all" style="">
-  <view style="width:750rpx;height:120rpx;background:#FFBE5A"></view>
-  <view class="topTap">
+  <!-- <view style="width:750rpx;height:120rpx;background:#FFBE5A;position:fixed"></view> -->
+  <!-- <view class="topTap">
     <view class="arrowLeft">
       <image src="../../pic/arrow_left.png" style="width:22rpx;height:36rpx;"></image>
     </view>
     <view class="tapTitle">确认订单</view>
-  </view>
+  </view> -->
   <view style="width:750rpx;">
       <view class="orderTitle">
         <view style="width:676rpx;font-size:24rpx;color:#0E0D0D;">
           张家界+凤凰古城+天门山日出云海+星空露营+古城放灯五日 房车最美文化旅行，给你一个最独特的回忆.....
         </view>
         <view style="width:427rpx;margin-top:17rpx;font-size:22rpx;">
-          长沙出发 | 2020-09-25 出发 2020-09-30返程2成人
+          长沙出发 | 2020-09-25 出发 2成人
         </view>
       </view>
       <view class="title">

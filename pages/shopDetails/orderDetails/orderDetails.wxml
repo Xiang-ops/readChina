@@ -87,5 +87,5 @@
 </view>
 <view style="width:750rpx;height:90rpx;"></view>
 <view class="orderBottom">
-  <view class="orderBtn">立即预定</view>
+  <view class="orderBtn" bindtap="goToVerify">立即预定</view>
 </view>

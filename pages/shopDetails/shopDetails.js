@@ -7,14 +7,39 @@ Page({
   data: {
     array: ['../../pic/D33.jpg',
     '../../pic/D444.jpg',
-    '../../pic/D5.jpg']
+    '../../pic/D5.jpg'],
+    detailData:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // const 
+    const _this = this;
+    console.log("lalala");
+    wx.request({
+      url: 'http://47.104.191.228:8086/spu/get/spuId/spu',
+      method: 'GET',
+      data:{
+        spuId: 91431009,
+        userId: 84519326,
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res){
+        console.log(res);
+        if(res.data){
+          _this.setData({
+            detailData:res.data
+          })
+        }        
+      },
+      fail(err){
+        console.log(err);
+      }
+    })
   },
   goToOrder: function(){
     wx.navigateTo({
