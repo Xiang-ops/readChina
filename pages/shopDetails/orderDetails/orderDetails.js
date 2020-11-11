@@ -1,6 +1,8 @@
 // pages/shopDetails/orderDetails/orderDetails.js
 // var teamId = document.getElementById('team');
-
+var date = new Date();
+var month = date.getUTCDay();
+console.log(month);
 Page({
 
   /**

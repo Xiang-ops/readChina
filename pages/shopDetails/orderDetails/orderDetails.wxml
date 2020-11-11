@@ -9,19 +9,19 @@
 <view class="num">
   <view class="peopleNum">
     <text>成人</text>
-    <view style="display:flex;margin-left:512rpx;">
-      <image src="../../../pic/-.png" style="width:30rpx;height:30rpx;" bindtap="subPeople"></image>
+    <view style="display:flex;margin-left:478rpx;">
+      <image src="../../../pic/-.png" style="width:50rpx;height:50rpx;" bindtap="subPeople"></image>
       <input class="numInput" value="{{youthNum}}"></input>
-      <image src="../../../pic/+.png" style="width:30rpx;height:30rpx;"
+      <image src="../../../pic/+.png" style="width:50rpx;height:50rpx;"
        bindtap="addPeople"></image>
     </view>
   </view>
   <view class="peopleNum">
     <text>儿童</text>
-    <view style="display:flex;margin-left:512rpx;">
-      <image src="../../../pic/-.png" style="width:30rpx;height:30rpx;"></image>
+    <view style="display:flex;margin-left:478rpx;">
+      <image src="../../../pic/-.png" style="width:50rpx;height:50rpx;"></image>
       <input class="numInput" value="{{childNum}}"></input>
-      <image src="../../../pic/+.png" style="width:30rpx;height:30rpx;"></image>
+      <image src="../../../pic/+.png" style="width:50rpx;height:50rpx;"></image>
     </view>
   </view>
 </view>
