@@ -1,0 +1,219 @@
+/* pages/home/home.wxss */
+.banner .img{
+  height: 172rpx;
+  width: 100%;
+}
+.searchPlace{
+  height: 343rpx;
+  width: 100%;
+}
+.searchPlace .top{
+  background-color: #FFBE5A;
+  height: 90rpx;
+  width: 100%;
+}
+.searchPlace .content{
+  width: 638rpx;
+  height: 312rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+  margin: -74rpx auto 0;
+  padding-left: 36rpx;
+}
+.searchPlace .position{
+  color: #686868;
+  font-size: 30rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  width: 100%;
+  font-weight: bold;
+}
+.searchPlace .icon{
+  width: 40rpx;
+  height: 47rpx;
+  margin-right: 32rpx;
+  position: relative;
+  top: 10rpx;
+}
+.searchPlace .search{
+  width: 576rpx;
+  height: 83rpx;
+  border: 3rpx solid #FFDFAD;
+  border-width: 3rpx 0;
+  font-size: 24rpx;
+  color: #a1a1a1;
+  line-height: 83rpx;
+}
+.searchPlace .days{
+  width: 576rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  font-size: 24rpx;
+  color: #a1a1a1;
+}
+.searchPlace .btn{
+  background-color: #FFBE5A;
+  width: 212rpx;
+  height: 44rpx;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 22rpx;
+  line-height: 15rpx;
+}
+.title{
+  font-size: 24rpx;
+  color: #242424;
+  margin-bottom: 17rpx;
+}
+.hotSpots{
+  height: 362rpx;
+  background-color: #fff;
+  width: 100%;
+  padding-top: 21rpx;
+  padding-left: 13rpx;
+}
+.hotSpots .content{
+  display: flex;
+  flex-direction: row;
+}
+.hotSpots .name{
+  color: #fff;
+  font-size: 36rpx;
+}
+.hotSpots .leftSpot{
+  width: 368rpx;
+  height: 284rpx;
+}
+.leftSpot .name{
+  position: relative;
+  top: -65rpx;
+  left: 23rpx;
+}
+.hotSpots .leftImg{ 
+  width: 100%;
+  height: 100%;
+}
+.hotSpots .rightSpot{
+  width: 351rpx;
+}
+.hotSpots .rightImg{
+  width: 100%;
+  height: 142rpx;
+  margin-left: 5rpx;
+}
+.rightSpot .line{
+  height: 146rpx;
+}
+.rightSpot .name{
+  position: relative;
+  top: -65rpx;
+  left: 13rpx;
+}
+.hotRoutes{
+  padding-top: 21rpx;
+  padding-left: 13rpx;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 15rpx;
+}
+.hotRoutes .list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.list .li{
+  width: 49%;
+  height: 300rpx;
+  text-align: center;
+}
+.list .img{
+  width: 348rpx;
+  height: 290rpx;
+}
+.list .name{
+  color: #fff;
+  font-size: 32rpx;
+  position: relative;
+  top: -60rpx;
+}
+/*模态框*/
+.modal{
+  position:fixed; 
+  top:0; 
+  right:0; 
+  bottom:0; 
+  left:0; 
+  z-index:1000;
+}
+.modal-cancel{
+  position:absolute; 
+  z-index:2000; 
+  top:0; 
+  right:0; 
+  bottom: 0; 
+  left:0; 
+  background:rgba(0,0,0,0.3);
+}
+.bottom-dialog-body{
+  width:100%; 
+  position:absolute; 
+  z-index:3000; 
+  bottom:0; 
+  left:0;
+  background:#dfdede;
+}
+/*动画前初始位置*/
+.bottom-positon{
+  -webkit-transform:translateY(100%);transform:translateY(100%);
+}
+/* 底部弹出框 */
+.bottom-positon{
+  text-align: center;
+}
+.Mselect{
+  margin-bottom: 20rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.Mselect .title{
+  color: #838383;
+  font-weight: bold;
+  font-size: 24rpx;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.Mselect .opt{
+  width: 20%;
+  height: 79rpx;
+  font-size: 24rpx;
+  line-height: 79rpx;
+  border-radius: 5rpx;
+  margin: 10rpx 19rpx;
+}
+.opt-notactive{
+  background: #d2d2d2;
+  color: #919191;
+}
+.opt-active{
+  background: #FFBF5D;
+  color: #fff;
+}
+.Mselect .btn{
+  margin:20rpx auto;
+  width: 300rpx;
+  height: 64rpx;
+  color: #fff;
+  font-weight: bold;
+  font-size: 34rpx;
+  line-height: 64rpx;
+  background-color:#FFBF5D;
+  border-radius: 10rpx;
+}
+.Mselect view:not(:last-of-type){
+  border-bottom: 1px solid #dfdede;
+}

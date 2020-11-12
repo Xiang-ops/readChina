@@ -1,0 +1,77 @@
+.choseView{
+  width: 750rpx;
+  padding: 29rpx 0rpx 0rpx 24rpx;
+  font-size: 28rpx;
+}
+.active{
+  background: #F2B032;
+  border-radius: 7.5rpx;
+  color: white;
+  padding: 3rpx;
+}
+.teamStyle{
+  margin: 25rpx 0 32rpx 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.teamStyle view{
+  margin-right: 47rpx;
+}
+.num{
+  padding-left: 18rpx;
+}
+.peopleNum{
+  display: flex;
+  width: 750rpx;
+  height: 63rpx;
+  font-size: 30rpx;
+  border-bottom: 3rpx solid #E5E5E5;
+  line-height: 63rpx;
+}
+.peopleNum image{
+  margin: auto 0;
+}
+.numInput{
+  width: 63rpx;
+  height: 63rpx;
+  text-align: center;
+  font-size: 26.82rpx;
+  color: #605E5E;
+}
+.date>view{
+  width: 750rpx;
+  height: 63rpx;
+  line-height: 63rpx;
+  border-bottom: 3rpx solid #E5E5E5;
+  font-size:26.82rpx;
+  color: #605E5E;
+}
+.week{
+  display:flex;
+}
+.week>view{
+  width:108rpx;
+  text-align:center;
+}
+
+
+.orderBottom{
+  height: 78rpx;
+  width: 750rpx;
+  position: fixed;
+  bottom: 0;
+  border-top: 3rpx solid #E5E5E5;
+  background: #fff;
+}
+.orderBtn{
+  width: 243.1rpx;
+  height: 47.6rpx;
+  line-height: 47.6rpx;
+  font-size: 26.82rpx;
+  text-align: center;
+  color: #fff;
+  margin: 14rpx 0rpx 0rpx 473rpx;
+  background-color: #F2B032;
+  border-radius: 7.5rpx;
+}

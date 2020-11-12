@@ -1,0 +1,27 @@
+<!--pages/home/result/result.wxml-->
+<view class="top">
+  <view class="info">
+    <view class="from">
+      <image src="../../../img/positionInfo.png" class="icon"></image>{{searchInfo.fromPlace}}
+    </view>
+    <view class="to">{{searchInfo.toPlace}}</view>
+    <view class="days">行程天数:{{searchInfo.days}}</view>
+  </view>
+</view>
+<view class="list">
+  <view class="li" wx:for="{{result}}" wx:key="*this" bindtap="toDetail" data-id="{{item.spuId}}">
+    <image src="{{item.banner}}" class="img"></image>
+    <view class="content">
+      <view class="title">{{item.spuName}}</view>
+      <!-- <view class="block">
+        <view class="size" wx:for="{{item.block}}" wx:key="*this">{{item}}</view>
+      </view> -->
+      <view class="block">
+        <view class="size">情侣</view>
+        <view class="size">亲子</view>
+      </view>
+      <view class="price">￥{{item.originPrice}}</view>
+      <view class="collectionInfo">12人收藏</view>
+    </view>
+  </view>
+</view>

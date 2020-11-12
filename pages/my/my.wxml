@@ -1,0 +1,36 @@
+<!--pages/my/my.wxml-->
+<view class="header">
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data class="username" type="userNickName"></open-data>
+  <navigator class="exit" target="miniProgram" open-type="exit">退出登录</navigator>
+</view>
+<view class="center">
+  <view class="title">我的订单</view>
+  <view class="content">
+    <navigator class="card">
+      <image src="../../img/allOrder.png" class="icon"></image>全部订单
+    </navigator>
+    <navigator class="card">
+      <image src="../../img/myOrder.png" class="icon"></image>我的订单
+    </navigator>
+    <navigator class="card">
+      <image src="../../img/notGo.png" class="icon"></image>未出行
+    </navigator>
+  </view>
+</view>
+<view class="list">
+  <navigator class="nav">
+    <image class="icon" src="../../img/collection.png"></image>我的收藏
+  </navigator>
+  <navigator class="nav">
+    <image class="icon" src="../../img/about.png"></image>关于我们
+  </navigator>
+  <navigator class="nav">
+    <image class="icon" src="../../img/solution.png"></image>意见反馈
+  </navigator>
+  <navigator class="nav">
+    <image class="icon" src="../../img/set.png"></image>设置
+  </navigator>
+</view>

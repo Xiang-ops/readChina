@@ -1,0 +1,72 @@
+<!--pages/home/home.wxml-->
+<view class="wrap">
+  <view class="banner">
+    <swiper indicator-dots="true" indicator-active-color="#FFBE5A" indicator-color="#fff"
+      autoplay="true" interval="2000" duration="100" class="img">
+      <block wx:for="{{banner}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}" style="width:100%;height:100%"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="searchPlace">
+    <view class="top"></view>
+    <view class="content">
+      <view class="position">
+        <image src="../../img/position.png" class="icon"></image>{{fromPlace}}
+      </view>
+      <view class="search" bindtap="toSearch">{{toPlace==""?"请输入目的地\关键字":toPlace}}</view>
+      <view class="days" bindtap="showModal">{{value}}</view>
+      <button class="btn" bindtap="toResult">搜索</button>
+    </view>
+  </view>
+  <view class="hotSpots">
+    <view class="title">热门景点</view>
+    <view class="content">
+      <view class="leftSpot">
+        <image src="../../img/spot1.jpg" class="leftImg"></image>
+        <input value="张家界" class="name"/>
+      </view>
+      <view class="rightSpot">
+        <view class="line">
+          <image src="../../img/spot2.jpg" class="rightImg"></image>
+          <input value="凤凰" class="name"/>
+        </view>
+        <view class="line">
+          <image src="../../img/spot3.jpg" class="rightImg"></image>
+          <input value="三亚" class="name"/>
+        </view>  
+      </view>
+    </view>
+  </view>
+  <view class="hotRoutes">
+    <view class="title">热门路线</view>
+    <view class="list">
+      <view class="li" wx:for="{{routes}}" wx:key="*this" bindtap="toDetail" data-id="{{item.spuId}}">
+        <image src="{{item.banner}}" class="img"></image>
+        <input value="{{item.spuName}}" class="name"/>
+      </view>
+    </view>
+  </view>
+  <!-- 上拉加载 -->
+  <!-- <view style="transform:translate3d(0,{{childTop}}px,0)"  bindtouchmove="moveFn"  bindtouchstart="startFn" bindtouchend="endFn">
+    <view wx:for="{{routes}}" wx:key="index">
+        <view>{{ item }}<text>{{index}}</text></view>
+    </view>
+  </view> -->
+  <!-- modal  -->
+  <view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
+    <view class="modal-cancel" bindtap="hideModal"></view>
+    <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
+      <view class='Mselect'>
+        <view class="title">选择行程天数</view>
+        <view class="{{item.style}}" wx:for="{{optionList}}" wx:key="unique" data-value='{{item}}' bindtap='getOption'>
+          {{item.value}}
+        </view>
+        <view class="btn" bindtap="sure">确定</view>
+      </view>
+    </view>
+  </view>
+ 
+</view>

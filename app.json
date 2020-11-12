@@ -1,13 +1,34 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/home/home",
+    "pages/my/my",
+    "pages/home/search/search",
+    "pages/home/result/result",
+    "pages/shopDetails/shopDetails",
+    "pages/orderVerify/orderVerify",
+    "pages/shopDetails/orderDetails/orderDetails"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#FFBE5A",
+    "navigationBarTitleText": "读见中国",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor":"#FFC060",
+    "color":"#202020",
+    "list": [{
+      "iconPath":"./img/home.png",
+      "selectedIconPath":"./img/homeSelect.png",
+      "pagePath": "pages/home/home",
+      "text": "首页"
+    }, {
+      "iconPath":"./img/my.png",
+      "selectedIconPath":"./img/mySelect.png",
+      "pagePath": "pages/my/my",
+      "text": "我的"
+    }]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

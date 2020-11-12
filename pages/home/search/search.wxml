@@ -1,0 +1,20 @@
+<!--pages/home/search/search.wxml-->
+<view class="search">
+  <view class="frame">
+    <image src="../../../img/search.png" class="icon"></image>
+    <input class="keyword" type="text" placeholder="目的地\\关键字" bindblur="getPlace" value="{{place}}"/>
+  </view>
+  <view class="cancel" bindtap="cancel">取消</view>
+</view>
+<view class="history">
+  <view class="title">历史搜索</view>
+  <view class="content">
+    <view class="spot" wx:for="{{history}}" wx:key="*this" bindtap="getItem" data-toPlace="{{item}}">{{item}}</view>
+  </view>
+</view>
+<view class="hotSpots">
+  <view class="title">热门景点</view>
+  <view class="content">
+    <view class="spot" wx:for="{{hotSpots}}" wx:key="*this" bindtap="getItem" data-toPlace="{{item}}">{{item}}</view>
+  </view>
+</view>

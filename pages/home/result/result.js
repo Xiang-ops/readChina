@@ -1,52 +1,35 @@
-// pages/myCenter/myCenter.js
-const app = getApp();     // 取得全局App
+// pages/home/result/result.js
+const app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    value:"" 
+    searchInfo:{},
+    result:null
   },
-  formSubmit:function(e){
-    var _this=this
-    var user={
-      password: e.detail.value.password,
-      phone: e.detail.value.phone 
-    }
-    console.log(user)
-    this.personLogin(user).then((res)=>{
-      if(typeof res!="number"){
-        wx.showToast({
-          title: '账号或密码错误！！！',
-          icon: "none",
-          duration: 2000
-        })
-      } else{
-        app.globalData.userInfo = {
-          phone:user.phone,
-          userid:res
-        }
-        app.globalData.userStatus = "login"
-        wx.switchTab({
-          url: '../home/home',
-        })
-      }
+  toDetail:function(e){
+    var spu_id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../../shopDetails/shopDetails?spu_id='+spu_id,
     })
   },
-  personLogin: function (e) {
-    var msg=JSON.stringify(e);
-    console.log(msg)
+  getResult: function (info) {
+    console.log(info)
     return new Promise(function (resolve, reject) {
       wx.request({
-        url: 'http://47.104.191.228:8086/user/login',
-        method: "POST",
+        url: 'http://47.104.191.228:8086/sku/get/goods/desctination',
+        method: "GET",
         header: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/x-www-form-urlencoded"
         },
-        data: msg,
+        data: {
+          destination: info.toPlace,
+          userId:app.globalData.userInfo.userid
+        },
         success: function (res) {
-          resolve(res.data)
+          resolve(res.data[0])
         },
         fail: function (res) {
           console.log("登录失败")
@@ -59,8 +42,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var _this = this;
-    console.log(app.globalData.userStatus)
+    var searchInfo=JSON.parse(options.searchInfo)
+    this.getResult(searchInfo).then((res)=>{
+      this.setData({
+        searchInfo:searchInfo,
+        result:res
+      })
+    })
   },
 
   /**
@@ -74,7 +62,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad()
+
   },
 
   /**

@@ -1,13 +1,11 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+<view class="bg"></view>
+<view class="index">
+  <view class="login">
+    <view class="title">读见中国</view> 
+    <form bindsubmit="formSubmit">
+      <input type="text" name="phone" placeholder="手机号" class="loginInput" value="{{value}}"/>
+      <input type="text" name="password" password="true" placeholder="密码" value="{{value}}" class="loginInput"/>
+      <button class="loginBtn" form-type="submit">登录</button>
+    </form> 
   </view>
 </view>
