@@ -47,7 +47,7 @@
   font-size: 26.82rpx;
   color: #605E5E;
 }
-.date>view{
+.date view{
   width: 750rpx;
   height: 63rpx;
   line-height: 63rpx;
@@ -55,11 +55,21 @@
   font-size:26.82rpx;
   color: #605E5E;
 }
+.weekLable{
+  width: 100%;
+  display: flex;
+}
+.weekLable>view{
+  width: 14.2%;
+  text-align: center;
+}
 .week{
+  width: 100%;
   display:flex;
+  flex-wrap: wrap;
 }
 .week>view{
-  width:108rpx;
+  width:14.2%;
   text-align:center;
 }
 

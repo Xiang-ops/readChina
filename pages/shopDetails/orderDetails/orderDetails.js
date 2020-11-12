@@ -1,7 +1,5 @@
 // pages/shopDetails/orderDetails/orderDetails.js
-// var teamId = document.getElementById('team');
 var date = new Date();
-var month = date.getUTCDay();
 Page({
 
   /**
@@ -13,7 +11,9 @@ Page({
     youthNum:5,
     childNum:0,
     subBtn:false,
-    addBtn:true
+    addBtn:true,
+    month:'',
+    monthArray2:[]
   },
 
   /**
@@ -22,6 +22,44 @@ Page({
   onLoad: function (options) {
     // var teamViews = teamId.childNodes;
     // console.log(teamViews);
+    var month = date.getMonth()+1;
+    this.setData({
+      month:month,
+    })
+    this.handleChangeMonth(month);
+  },
+  /**
+   * 月份切换
+   * @param {month} e 
+   */
+  handleChangeMonth(e){
+    let month;
+    if(e.currentTarget){
+      month = e.currentTarget.dataset.month;
+    }else{
+      month = e;
+    }
+    // this.setData({
+    //   month:month,
+    // });
+    var weekDay = date.getDay();
+    var day = date.getDate();
+    var year = date.getFullYear();
+    var date1 = new Date(year,month-1,1);
+    var weekDay1 = date1.getDay();
+    console.log(year,"年的",month,"月是星期",weekDay1);
+    let weekArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+    for(let i=0;i<weekDay1;i++){
+      weekArray.unshift(" ");
+    }
+    console.log(weekArray);
+    this.setData({
+      monthArray2:weekArray,
+    })
+    // console.log("year================>", year);
+    // console.log("month===============>", month);
+    // console.log("weekDay================>", weekDay);
+    // console.log("day===================>",day);
   },
   chooseTeam(e){
     console.log(e);

@@ -20,13 +20,13 @@
           <view style="font-size:26rpx;color:#050505;border-bottom: 3rpx solid #EAEAEA;padding-left: 21rpx;line-height: 63rpx;">
             出行人信息
           </view>
-          <view class="orderInfo" wx:for="{{personArray}}">
+          <form class="orderInfo" wx:for="{{personArray}}" wx:key="index" bindsubmit="getLvInfo">
             <view>
-              <text style="font-weight:bold;">旅客1</text>
+              <text style="font-weight:bold;">旅客{{index+1}}</text>
             </view>
             <view>
               <text>姓名</text>
-              <input placeholder="与证件姓名一致" style="height:63rpx;margin-left:224rpx;">{{item.name}}</input>
+              <input placeholder="与证件姓名一致" style="height:63rpx;margin-left:224rpx;" value="{{lvName}}" data-index="{{index}}" name="lvName"/>
             </view>
             <view>
               <text>证件类型</text>
@@ -34,34 +34,17 @@
             </view>
             <view>
               <text>身份证号</text>
-              <input style="height:63rpx;margin-left:174rpx;">{{item.card}}</input>
+              <input style="height:63rpx;margin-left:174rpx;" value="{{lvCard}}"   data-index="index" name="lvCard" />
             </view>
             <view>
               <text>手机号码</text>
-              <input style="height:63rpx;margin-left:174rpx;">{{item.phone}}</input>
-            </view>
-          </view>
-          <!-- <view class="orderInfo">
-            <view>
-              <text style="font-weight:bold;">旅客2</text>
+              <input style="height:63rpx;margin-left:174rpx;" value="{{lvPhone}}"   data-index="index" name="lvPhone"/>
             </view>
             <view>
-              <text>姓名</text>
-              <input placeholder="与证件姓名一致" style="height:63rpx;margin-left:224rpx;"></input>
+              <button style="color:#FFBE5A;font-size:27rpx" formType="submit">提交</button>
+              <button style="color:#FFBE5A;font-size:27rpx" >修改</button>
             </view>
-            <view>
-              <text>证件类型</text>
-              <view style="height:63rpx;margin-left:173rpx;">居民身份证</view>
-            </view>
-            <view>
-              <text>身份证号</text>
-              <input style="height:63rpx;margin-left:174rpx;"></input>
-            </view>
-            <view>
-              <text>手机号码</text>
-              <input style="height:63rpx;margin-left:174rpx;"></input>
-            </view>
-          </view> -->
+          </form>
       </view>
       <view class="lxrInfo">
           <view class="commonStyle" style="font-size:26rpx;">

@@ -1,13 +1,13 @@
 {
   "pages":[
+    "pages/shopDetails/orderDetails/orderDetails",
     "pages/index/index",
     "pages/home/home",
     "pages/my/my",
     "pages/home/search/search",
     "pages/home/result/result",
     "pages/shopDetails/shopDetails",
-    "pages/orderVerify/orderVerify",
-    "pages/shopDetails/orderDetails/orderDetails"
+    "pages/orderVerify/orderVerify"
   ],
   "window":{
     "backgroundTextStyle":"light",

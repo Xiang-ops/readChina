@@ -1,4 +1,5 @@
 // pages/orderVerify/orderVerify.js
+const app = getApp();     // 取得全局App
 Page({
 
   /**
@@ -15,9 +16,9 @@ Page({
     const peopleNum = 2;
     let peopleArray = [];
     let people = {
-      name:"",
-      card:"",
-      phone:""
+      // name:"",
+      // card:"",
+      // phone:""
     };
     for(let i=0;i<peopleNum;i++){
       peopleArray.push(people);
@@ -75,6 +76,45 @@ Page({
   onShareAppMessage: function () {
 
   },
+  /**
+   * 获取旅客信息
+   * @param {index} e 
+   */
+  getLvInfo(e){
+    console.log(e);
+    let array = JSON.stringify(e.detail.value);
+    // array.push(e.detail.value);
+    if(app.globalData.userInfo){
+      // let userid = app.globalData.userInfo.userid;
+      let userid = 38525052;
+      if(userid){
+        wx.request({
+          url: 'http://47.104.191.228:8086/rv/create?userId='+userid,
+          method: 'POST',
+          header: {
+            "Content-type": "application/json"
+          },
+          data:{
+            "phone":array.lvPhone,
+            "realName":array.lvName,
+            "rvIdCard":array.lvCard
+          },
+          success: (res)=>{
+            console.log(res);
+          }
+        })
+      }
+    }
+  },
+  /**
+   * 提交旅客信息
+   */
+  // submitBtn(e){
+  //   let lvIndex = e.currentTarget.dataset.index;
+  //   console.log(this.data.personArray);
+  //   console.log(e);
+    
+  // },
   /**
    * 提交订单
    */

@@ -28,6 +28,7 @@ Page({
           userid:res
         }
         app.globalData.userStatus = "login"
+        console.log(app.globalData.userInfo);
         wx.switchTab({
           url: '../home/home',
         })

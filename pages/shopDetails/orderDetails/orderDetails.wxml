@@ -28,10 +28,10 @@
   </view>
   <view class="date">
     <view style="display:flex;">
-      <view style="width:375rpx;text-align:center;">9月</view>
-      <view style="width:375rpx;text-align:center;">10月</view>
+      <view style="width:375rpx;text-align:center;" data-month="{{month}}" bindtap="handleChangeMonth">{{month}}月</view>
+      <view style="width:375rpx;text-align:center;" data-month="{{month+1}}" bindtap="handleChangeMonth">{{month+1}}月</view>
     </view>
-    <view class="week">
+    <view class="weekLable">
       <view>日</view>
       <view>一</view>
       <view>二</view>
@@ -41,49 +41,7 @@
       <view>六</view>
     </view>
     <view class="week">
-      <view></view>
-      <view></view>
-      <view>1</view>
-      <view>2</view>
-      <view>3</view>
-      <view>4</view>
-      <view>5</view>
-    </view>
-    <view class="week">
-      <view>6</view>
-      <view>7</view>
-      <view>8</view>
-      <view>9</view>
-      <view>10</view>
-      <view>11</view>
-      <view>12</view>
-    </view>
-    <view class="week">
-      <view>13</view>
-      <view>14</view>
-      <view>15</view>
-      <view>16</view>
-      <view>17</view>
-      <view>18</view>
-      <view>19</view>
-    </view>
-    <view class="week">
-      <view>20</view>
-      <view>21</view>
-      <view>22</view>
-      <view>23</view>
-      <view>24</view>
-      <view>25</view>
-      <view>26</view>
-    </view>
-    <view class="week">
-      <view>27</view>
-      <view>28</view>
-      <view>29</view>
-      <view>30</view>
-      <view>31</view>
-      <view></view>
-      <view></view>
+      <view wx:for="{{monthArray2}}">{{item}}</view>
     </view>
   </view>
   <view style="width:750rpx;height:90rpx;"></view>
