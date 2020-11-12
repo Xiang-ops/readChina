@@ -4,12 +4,13 @@
   height:100%;
   position: fixed;
   overflow: scroll;
+  background-color: #fff;
 }
 .detailTitle{
   width:697rpx;
   font-size: 33rpx;
   color:white;
-  position: fixed;
+  position: absolute;
   top: 375rpx;
   left: 31rpx;
 }
