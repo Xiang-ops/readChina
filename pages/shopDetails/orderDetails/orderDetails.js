@@ -13,7 +13,9 @@ Page({
     subBtn:false,
     addBtn:true,
     month:'',
-    monthArray2:[]
+    monthArray2:[],
+    curMonth:'',
+    monthStyle:-7,
   },
 
   /**
@@ -39,9 +41,10 @@ Page({
     }else{
       month = e;
     }
-    // this.setData({
-    //   month:month,
-    // });
+    this.setData({
+      curMonth:month,
+      monthStyle:-7,
+    });
     var weekDay = date.getDay();
     var day = date.getDate();
     var year = date.getFullYear();
@@ -55,15 +58,37 @@ Page({
     console.log(weekArray);
     this.setData({
       monthArray2:weekArray,
+      weekDay1:weekDay1,
     })
-    // console.log("year================>", year);
-    // console.log("month===============>", month);
-    // console.log("weekDay================>", weekDay);
-    // console.log("day===================>",day);
   },
+  /**
+   * 选择日期
+   * @param {index} e 
+   */
+  chooseDate(e){
+    var index = e.currentTarget.dataset.index+1-this.data.weekDay1;
+    console.log(index);
+    var day = date.getDate();
+    if(this.data.curMonth===this.data.month){
+      if((index)<day){
+        wx.showModal({
+          title: '提示',
+          content: '不要选择过去的时间',
+        })
+        return;
+      }
+    }
+      this.setData({
+        monthStyle:index,
+      })
+      var chooseDate = date.getFullYear()+"年"+this.data.curMonth+"月"+index+"日";
+      this.setData({
+        chooseDate:chooseDate
+      })
+      console.log("选择的日期是=======>",this.data.chooseDate);
+   },
   chooseTeam(e){
-    console.log(e);
-    
+    console.log(e);    
     var index = e.currentTarget.dataset.index;
     this.setData({
       num:index

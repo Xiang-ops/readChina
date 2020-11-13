@@ -20,32 +20,34 @@
           <view style="font-size:26rpx;color:#050505;border-bottom: 3rpx solid #EAEAEA;padding-left: 21rpx;line-height: 63rpx;">
             出行人信息
           </view>
-          <form class="orderInfo" wx:for="{{personArray}}" wx:key="index" bindsubmit="getLvInfo">
+          <form class="orderInfo" wx:for="{{personArray}}" wx:key="index" bindsubmit="submitLvInfo" bindreset="updateInfo">
             <view>
               <text style="font-weight:bold;">旅客{{index+1}}</text>
+              <view class="editImg" bindtap="edit" data-index="{{index}}"><image src="../../img/edit.png" style="width:60rpx;height:60rpx;"/></view>
             </view>
             <view>
               <text>姓名</text>
-              <input placeholder="与证件姓名一致" style="height:63rpx;margin-left:224rpx;" value="{{lvName}}" data-index="{{index}}" name="lvName"/>
+              <input placeholder="与证件姓名一致" style="height:63rpx;margin-left:224rpx;text-align:center;" value="{{item.realName}}" data-index="{{index}}" name="lvName" disabled="{{disable==index?false:true}}"/>
             </view>
             <view>
               <text>证件类型</text>
-              <view style="height:63rpx;margin-left:173rpx;">居民身份证</view>
+              <view style="height:63rpx;margin-left:229rpx;text-align:center;">居民身份证</view>
             </view>
             <view>
               <text>身份证号</text>
-              <input style="height:63rpx;margin-left:174rpx;" value="{{lvCard}}"   data-index="index" name="lvCard" />
+              <input style="height:63rpx;margin-left:174rpx; text-align:center;" value="{{item.rvIdCard}}"   data-index="index" name="lvCard" disabled="{{disable==index?false:true}}"/>
             </view>
             <view>
               <text>手机号码</text>
-              <input style="height:63rpx;margin-left:174rpx;" value="{{lvPhone}}"   data-index="index" name="lvPhone"/>
+              <input style="height:63rpx;margin-left:174rpx;text-align:center;" value="{{item.phone}}"   data-index="index" name="lvPhone"disabled="{{disable==index?false:true}}"/>
             </view>
             <view>
-              <button style="color:#FFBE5A;font-size:27rpx" formType="submit">提交</button>
-              <button style="color:#FFBE5A;font-size:27rpx" >修改</button>
+              <button style="color:#FFBE5A;font-size:27rpx;width:100%;background:#FFF" formType="submit">提交</button>
+              <!-- <button style="color:#FFBE5A;font-size:27rpx" formType="reset">修改</button> -->
             </view>
           </form>
       </view>
+      <view class="addBtn"><image src="../../img/add.png" style="width: 60rpx; height: 60rpx;"/></view>
       <view class="lxrInfo">
           <view class="commonStyle" style="font-size:26rpx;">
           联系人信息

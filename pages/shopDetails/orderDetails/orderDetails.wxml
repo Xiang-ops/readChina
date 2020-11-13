@@ -41,7 +41,8 @@
       <view>六</view>
     </view>
     <view class="week">
-      <view wx:for="{{monthArray2}}">{{item}}</view>
+      <view wx:for="{{monthArray2}}" bindtap="chooseDate" data-index="{{index}}"
+      class="{{(monthStyle-1+weekDay1)===index?'chooseMonth':''}}">{{item}}</view>
     </view>
   </view>
   <view style="width:750rpx;height:90rpx;"></view>

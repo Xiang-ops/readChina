@@ -72,6 +72,9 @@
   width:14.2%;
   text-align:center;
 }
+.chooseMonth{
+  background-color: #E5E5E5;
+}
 
 
 .orderBottom{
