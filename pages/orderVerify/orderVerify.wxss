@@ -59,8 +59,11 @@
   line-height: 63rpx;
 }
 .editImg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  right: 40rpx;
+  right: 26rpx;
 }
 .addBtn{
   width: 100%;
