@@ -11,18 +11,28 @@ Page({
     userid:0,
     addShow:false,
     addIndex:1,
-    // loading:true,
+    lxrPhone:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // let userid = app.globalData.userInfo.userid
+    let userid = app.globalData.userInfo.userid
+    console.log(app.globalData.userInfo);
+    const _this = this;
+    wx.getStorage({
+      key: 'detailData',
+      success(res){
+        console.log(res.data);
+        _this.setData({
+          detailData:res.data
+        })
+      }
+    })
     wx.showLoading({
       title: '加载中',
     })
-    let userid = 38525052;
     this.setData({
       userid:userid,
       addIndex:1,
@@ -171,8 +181,8 @@ Page({
       let array = e.detail.value;
       // console.log("e========================>",e);
       if(app.globalData.userInfo){
-        // let userid = app.globalData.userInfo.userid;
-        let userid = 38525052;//12345678991  430781199812120524
+        let userid = app.globalData.userInfo.userid;
+        // let userid = 38525052;//12345678991  430781199812120524
         if(userid){
           wx.request({
             url: 'http://47.104.191.228:8086/rv/edit?userId='+userid,
@@ -239,6 +249,35 @@ Page({
           //声明一个当前页面
           perpage.onLoad() 
         }
+      }
+    })
+  },
+  /**
+   * 提交订单
+   */
+  submitOrder(e){
+    let userid = this.data.userid;
+    let detailData = this.data.detailData;
+    wx.request({
+      url: 'http://47.104.191.228:8086/orders/create?userId='+userid,
+      method:"POST",
+      header:{
+        "Content-type": "application/json"
+      },
+      data:{
+        "payInfo": "43132120001207576X,123",
+        "payPrice": detailData.originPrice,
+        "payType": 0,
+        "productNum": 0,
+        "skuId": detailData.skuId,
+        "skuName": detailData.skuName,
+        "spuId": detailData.spuId,
+        "spuName": detailData.spuName,
+        "totalPrice": detailData.currentPrice,
+        "userId": userid,
+      },
+      success:(res)=>{
+        console.log(res);
       }
     })
   }

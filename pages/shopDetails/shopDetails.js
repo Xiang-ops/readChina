@@ -1,4 +1,5 @@
 // pages/shopDetails/shopDetails.js
+const app = getApp();
 Page({
 
   /**
@@ -16,17 +17,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // const 
+    const userId = app.globalData.userInfo.userid;
     const _this = this;
     console.log(options);
-    var spu_id=JSON.parse(options.spu_id);
-    console.log(spu_id);
+    var sku_id=JSON.parse(options.sku_id);
+    console.log(sku_id);
     wx.request({
-      url: 'http://47.104.191.228:8086/spu/get/spuId/spu',
+      url: 'http://47.104.191.228:8086/sku/get/skuId/sku',
       method: 'GET',
       data:{
-        spuId: spu_id,
-        userId: 84519326,
+        skuId : sku_id,
+        userId: userId,
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -36,6 +37,10 @@ Page({
         if(res.data){
           _this.setData({
             detailData:res.data
+          })
+          wx.setStorage({
+            data: res.data,
+            key: 'detailData',
           })
         }        
       },

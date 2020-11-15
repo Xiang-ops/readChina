@@ -43,7 +43,7 @@
   <view class="hotRoutes">
     <view class="title">热门路线</view>
     <view class="list">
-      <view class="li" wx:for="{{routes}}" wx:key="*this" bindtap="toDetail" data-id="{{item.spuId}}">
+      <view class="li" wx:for="{{routes}}" wx:key="*this" bindtap="toDetail" data-id="{{item.skuId}}">
         <image src="{{item.banner}}" class="img"></image>
         <input value="{{item.spuName}}" class="name"/>
       </view>

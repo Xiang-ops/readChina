@@ -7,7 +7,7 @@
   </swiper>
   <view  class="detailTitle">
   <view>{{detailData.spuName}}</view> 
-  <view>{{detailData.desc}}</view>
+  <view>{{detailData.skuName}}</view>
   </view>
   
   <view class="detailInfo">
@@ -26,7 +26,7 @@
       </view>
       <view style="display:flex;">
         <view style="width:112rpx;">参考报价</view>
-        <view>￥{{detailData.price}}</view>
+        <view>￥{{detailData.currentPrice}}</view>
       </view> 
     </view>
     <view style="font-size:24rpx; margin-top:13rpx;">行程详情</view>

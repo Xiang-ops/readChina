@@ -100,9 +100,9 @@ Page({
     })
   },
   toDetail(e){
-    var spu_id=e.currentTarget.dataset.id;
+    var sku_id=e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../shopDetails/shopDetails?spu_id='+spu_id,
+      url: '../shopDetails/shopDetails?sku_id='+sku_id,
     })
   },
   getUserInfo: function(e) {
