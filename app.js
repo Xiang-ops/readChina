@@ -12,8 +12,8 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         var that=this;
         var code = res.code; //返回code
-        var appId = 'wx0f771713bd503163';
-        var secret = '51e7f13416f113b2f79716abb5642dbf';
+        var appId = 'wx109f502f99e2249e';
+        var secret = '7fb2f62d9c20931316eab90c7e7ff7b8';
         wx.request({
           url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
           data: {},

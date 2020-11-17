@@ -100,9 +100,9 @@ Page({
     })
   },
   toDetail(e){
-    var sku_id=e.currentTarget.dataset.id;
+    var spu_id=e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../shopDetails/shopDetails?sku_id='+sku_id,
+      url: '../shopDetails/shopDetails?spu_id='+spu_id,
     })
   },
   getUserInfo: function(e) {
@@ -117,7 +117,7 @@ Page({
   getRoad: function () {
     return new Promise(function (resolve, reject) {
       wx.request({
-        url: 'http://47.104.191.228:8086/sku/get/goods/offset',
+        url: 'http://47.104.191.228:8086/spu/get/spugoods/offset',
         method: "GET",
         header: {
           "Content-Type": "application/x-www-form-urlencoded"

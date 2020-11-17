@@ -6,8 +6,8 @@
     </swiper-item>  
   </swiper>
   <view  class="detailTitle">
-  <view>{{detailData.spuName}}</view> 
-  <view>{{detailData.skuName}}</view>
+  <view>{{detailData.spuName}}</view>
+  <view style="margin-top:15rpx;">{{detailData.desc}}</view>
   </view>
   
   <view class="detailInfo">
@@ -22,11 +22,11 @@
       </view>
       <view style="display:flex;">
         <view style="width:112rpx;">出游天数</view>
-        <view>三日</view>
+        <view>{{detailData.date}}</view>
       </view>
       <view style="display:flex;">
         <view style="width:112rpx;">参考报价</view>
-        <view>￥{{detailData.currentPrice}}</view>
+        <view>￥{{detailData.price}}</view>
       </view> 
     </view>
     <view style="font-size:24rpx; margin-top:13rpx;">行程详情</view>

@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/orderVerify/orderVerify",
     "pages/index/index",
     "pages/shopDetails/shopDetails",
-    "pages/orderVerify/orderVerify",
     "pages/shopDetails/orderDetails/orderDetails",
     
     "pages/home/home",

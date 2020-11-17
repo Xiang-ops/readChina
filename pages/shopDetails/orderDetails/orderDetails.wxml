@@ -4,11 +4,11 @@
   <view class="choseView">
     <view>选择成团方式</view>
     <view class="teamStyle" id="team">
-      <view  wx:for="{{teamData}}"  wx:key="index" bindtap="chooseTeam" data-index="{{index}}" class="{{num==index?'active':''}}">{{item}}</view>
+      <view  wx:for="{{teamData}}"  wx:key="index" bindtap="chooseTeam" data-index="{{index}}" class="{{num==index?'active':''}}">{{item.skuName}}</view>
     </view>
   </view>
   <view class="num">
-    <view class="peopleNum">
+    <!-- <view class="peopleNum">
       <text>成人</text>
       <view style="display:flex;margin-left:478rpx;">
         <image src="../../../pic/-.png" style="width:50rpx;height:50rpx;" bindtap="subPeople"></image>
@@ -16,18 +16,18 @@
         <image src="../../../pic/+.png" style="width:50rpx;height:50rpx;"
         bindtap="addPeople"></image>
       </view>
-    </view>
-    <view class="peopleNum">
+    </view> -->
+    <!-- <view class="peopleNum">
       <text>儿童</text>
       <view style="display:flex;margin-left:478rpx;">
         <image src="../../../pic/-.png" style="width:50rpx;height:50rpx;"></image>
         <input class="numInput" value="{{childNum}}"></input>
         <image src="../../../pic/+.png" style="width:50rpx;height:50rpx;"></image>
       </view>
-    </view>
+    </view> -->
   </view>
   <view class="date">
-    <view style="display:flex;">
+    <view style="display:flex;border:1rpx solid ##605E5E">
       <view style="width:375rpx;text-align:center;" data-month="{{month}}" bindtap="handleChangeMonth">{{month}}月</view>
       <view style="width:375rpx;text-align:center;" data-month="{{month+1}}" bindtap="handleChangeMonth">{{month+1}}月</view>
     </view>

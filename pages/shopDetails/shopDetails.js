@@ -20,13 +20,16 @@ Page({
     const userId = app.globalData.userInfo.userid;
     const _this = this;
     console.log(options);
-    var sku_id=JSON.parse(options.sku_id);
-    console.log(sku_id);
+    var spu_id=JSON.parse(options.spu_id);
+    this.setData({
+      spuId:spu_id
+    })
+    console.log(spu_id);
     wx.request({
-      url: 'http://47.104.191.228:8086/sku/get/skuId/sku',
+      url: 'http://47.104.191.228:8086/spu/get/spuId/spu',
       method: 'GET',
       data:{
-        skuId : sku_id,
+        spuId : spu_id,
         userId: userId,
       },
       header: {
@@ -38,10 +41,10 @@ Page({
           _this.setData({
             detailData:res.data
           })
-          wx.setStorage({
-            data: res.data,
-            key: 'detailData',
-          })
+          // wx.setStorage({
+          //   data: res.data,
+          //   key: 'detailData',
+          // })
         }        
       },
       fail(err){
@@ -51,7 +54,7 @@ Page({
   },
   goToOrder: function(){
     wx.navigateTo({
-      url: 'orderDetails/orderDetails',
+      url: 'orderDetails/orderDetails?spu_id='+this.data.spuId,
 
     })
   },

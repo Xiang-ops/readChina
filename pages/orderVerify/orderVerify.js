@@ -7,22 +7,28 @@ Page({
    */
   data: {
     personArray:[],
+    subPersonArray:[],
     disable:-1,
     userid:0,
     addShow:false,
     addIndex:1,
-    lxrPhone:''
+    lxrPhone:'',
+    hideDown:false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let userid = app.globalData.userInfo.userid
+    let userid = 38525052//app.globalData.userInfo.userid;
+    let lxrPhone = '15873889873'//app.globalData.userInfo.phone;
+    this.setData({
+      lxrPhone:lxrPhone
+    })
     console.log(app.globalData.userInfo);
     const _this = this;
     wx.getStorage({
-      key: 'detailData',
+      key: 'skuInfo',
       success(res){
         console.log(res.data);
         _this.setData({
@@ -47,9 +53,6 @@ Page({
     const peopleNum = 2;
     let peopleArray = [];
     let people = {
-      // name:"",
-      // card:"",
-      // phone:""
     };
     for(let i=0;i<peopleNum;i++){
       peopleArray.push(people);
@@ -57,6 +60,17 @@ Page({
     this.setData({
       personArray:peopleArray
     })
+  },
+  /**
+   * 下拉框
+   */
+  dropDown(e){
+    const _this = this;
+    if(this.data.personArray.length>0){
+      _this.setData({
+        hideDown:true,
+      })
+    }
   },
   /**
    * 编辑

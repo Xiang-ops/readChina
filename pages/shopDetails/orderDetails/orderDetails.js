@@ -1,4 +1,5 @@
 // pages/shopDetails/orderDetails/orderDetails.js
+const app = getApp();
 var date = new Date();
 Page({
 
@@ -24,11 +25,44 @@ Page({
   onLoad: function (options) {
     // var teamViews = teamId.childNodes;
     // console.log(teamViews);
+    wx.showLoading({
+      title: '加载中',
+    })
+    const spu_id = options.spu_id;
+    this.getSku(spu_id);
     var month = date.getMonth()+1;
     this.setData({
       month:month,
     })
     this.handleChangeMonth(month);
+  },
+  /**
+   * 通过spu_id获取sku商品列表
+   * @param {spu_id} e 
+   */
+  getSku(spu_id){
+    const userId = app.globalData.userInfo.userid;
+    const _this = this;
+    wx.request({
+      url: 'http://47.104.191.228:8086/spu/get/spuId/sku',
+      method: 'GET',
+      header:{
+        'content-type': 'application/json'
+      },
+      data:{
+        userId: userId,
+        spuId: spu_id,
+      },
+      success(res){
+        console.log("sku商品列表====================>", res);
+        _this.setData({
+          teamData:res.data
+        })
+        setTimeout(()=>{
+          wx.hideLoading();
+        },500);
+      }
+    })
   },
   /**
    * 月份切换
@@ -90,40 +124,35 @@ Page({
   chooseTeam(e){
     console.log(e);    
     var index = e.currentTarget.dataset.index;
-    this.setData({
-      num:index
+    var skuInfo = this.data.teamData[index];
+    wx.setStorage({
+      data: skuInfo,
+      key: 'skuInfo',
     })
+    this.setData({
+      num: index
+    })
+
     // if(index==0){
       
     // }
-    if(index==1){
-      this.setData({
-        youthNum:2,
-        addBtn:false,
-      })
-    }
-    if(index==2){
-      this.setData({
-        youthNum:1,
-        childNum:1,
-        addBtn:false
-      })
-    }
-    if(index==3){
-      this.setData({
-        youthNum:2,
-        childNum:1,
-        addBtn:false
-      })
-    }
+    // if(index==1){
+  
+    // }
+    // if(index==2){
+ 
+    // }
+    // if(index==3){
+  
+    // }
   },
   /**
    * 五人团的时候减人数
    */
-  subPeople(){
-    // if(youthNum)
-    console.log(youthNum)
-  },
+  // subPeople(){
+  //   // if(youthNum)
+  //   console.log(youthNum)
+  // },
   /**
    * 跳转到确认订单页面
    */

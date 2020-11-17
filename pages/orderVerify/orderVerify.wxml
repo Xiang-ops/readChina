@@ -20,30 +20,42 @@
           <view style="font-size:26rpx;color:#050505;border-bottom: 3rpx solid #EAEAEA;padding-left: 21rpx;line-height: 63rpx;">
             出行人信息
           </view>
-          <form class="orderInfo" wx:for="{{personArray}}" wx:key="index" bindsubmit="updateInfo">
-            <view>
+          <form wx:for="{{personArray}}" wx:key="index" bindsubmit="updateInfo">
+            <view class="orderLine">
               <text style="font-weight:bold;">旅客{{index+1}}</text>
               <view class="editImg">
-                <image src="../../img/delete.png" style="width:50rpx;height:50rpx;" bindtap="delete" data-index="{{index}}"/><image src="../../img/edit.png" style="width:50rpx;height:50rpx;" bindtap="edit" data-index="{{index}}"/>
+                <image src="../../img/edit.png" style="width:50rpx;height:50rpx;" bindtap="edit" data-index="{{index}}"/>
               </view>
             </view>
-            <view>
-              <text>姓名</text>
-              <input placeholder="与证件姓名一致" style="height:63rpx;margin-left:224rpx;text-align:center;" value="{{item.realName}}" data-index="{{index}}" name="realName" disabled="{{disable==index?false:true}}"/>
+            <view class="orderName">
+              <view class="orderLine">
+              <view>姓名</view>
+              <input placeholder="与证件姓名一致" value="{{item.realName}}" data-index="{{index}}" name="realName" disabled="{{disable==index?false:true}}" class="orderInput" style="position:relative" bindfocus="dropDown"/>
+              </view>
+              <view wx:if="{{hideDown}}">
+                <view wx:for="{{personArray}}" wx:key="index" class="modalArray">
+                  <view class="modalPerson">
+                    <view>{{item.realName}}</view>
+                    <view>{{item.rvIdCard}}</view>
+                    <view>{{item.phone}}</view>
+                    <image src="../../img/delete.png" style="width:40rpx;height:40rpx;margin-top:13rpx" bindtap="delete" data-index="{{index}}"/>
+                  </view>                
+                </view>
+              </view>
             </view>
-            <view>
-              <text>证件类型</text>
-              <view style="height:63rpx;margin-left:229rpx;text-align:center;">居民身份证</view>
+            <view class="orderLine">
+              <view>证件类型</view>
+              <input class="orderInput" disabled value="居民身份证"></input>
             </view>
-            <view>
-              <text>身份证号</text>
-              <input style="height:63rpx;margin-left:174rpx; text-align:center;" value="{{item.rvIdCard}}"   data-index="index" name="rvIdCard" disabled/>
+            <view class="orderLine">
+              <view>身份证号</view>
+              <input class="orderInput" value="{{item.rvIdCard}}"   data-index="index" name="rvIdCard" disabled/>
             </view>
-            <view>
-              <text>手机号码</text>
-              <input style="height:63rpx;margin-left:174rpx;text-align:center;" value="{{item.phone}}"   data-index="index" name="phone"disabled="{{disable==index?false:true}}"/>
+            <view class="orderLine">
+              <view>手机号码</view>
+              <input  class="orderInput" value="{{item.phone}}"   data-index="index" name="phone"disabled="{{disable==index?false:true}}"/>
             </view>
-            <view>
+            <view class="orderLine">
               <button style="color:#FFBE5A;font-size:27rpx;width:100%;background:#FFF" formType="submit">提交</button>
               <!-- <button style="color:#FFBE5A;font-size:27rpx" >修改</button> -->
             </view>
@@ -55,7 +67,7 @@
             </view>
             <view>
               <text>姓名</text>
-              <input placeholder="与证件姓名一致" style="height:63rpx;margin-left:224rpx;text-align:center;" value="{{realName}}"  name="realName"/>
+              <input placeholder="与证件姓名一致" style="height:63rpx;margin-left:224rpx;text-align:center;" value="{{realName}}"  name="realName" bindfocus="dropDown" bindinput="hideDropDown"/>
             </view>
             <view>
               <text>证件类型</text>
@@ -82,11 +94,11 @@
           </view>
           <view style="display:flex;font-size:24rpx;" class="commonStyle">
               <text>姓名</text>
-              <input placeholder="请填写联系人姓名" style="height:63rpx;margin-left:224rpx;"></input>
+              <input placeholder="请填写联系人姓名" style="height:63rpx;margin-left:224rpx;" auto-focus></input>
           </view>
           <view style="display:flex;font-size:24rpx;" class="commonStyle">
               <text>手机号</text>
-              <view style="height:63rpx;margin-left:199rpx;">138****6872</view>
+              <view style="height:63rpx;margin-left:199rpx;">{{lxrPhone}}</view>
           </view>
       </view>
   </view>

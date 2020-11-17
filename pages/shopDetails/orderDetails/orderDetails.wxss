@@ -51,17 +51,19 @@
   width: 750rpx;
   height: 63rpx;
   line-height: 63rpx;
-  border-bottom: 3rpx solid #E5E5E5;
-  font-size:26.82rpx;
-  color: #605E5E;
+  
 }
 .weekLable{
   width: 100%;
   display: flex;
+  border-bottom: 3rpx solid #E5E5E5;
+  font-size:26.82rpx;
+  color: #605E5E;
 }
 .weekLable>view{
   width: 14.2%;
   text-align: center;
+  
 }
 .week{
   width: 100%;
