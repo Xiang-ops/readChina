@@ -20,8 +20,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let userid = 38525052//app.globalData.userInfo.userid;
-    let lxrPhone = '15873889873'//app.globalData.userInfo.phone;
+    let userid;
+    let lxrPhone;
+    if(app.globalData.userInfo){
+      userid = app.globalData.userInfo.userid;
+      lxrPhone = app.globalData.userInfo.phone;
+    }else{
+      userid = 38525052;
+      lxrPhone = '15873889873'
+    }
     this.setData({
       lxrPhone:lxrPhone
     })
@@ -39,15 +46,18 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    this.setData({
+    _this.setData({
       userid:userid,
       addIndex:1,
     })
-    this.getLvInfo(this.data.userid).then((res)=>{
+    _this.getLvInfo(_this.data.userid).then((res)=>{
       console.log(res);
-      this.setData({
+      _this.setData({
         personArray:res.data,
-        // loading:false,
+      })
+      wx.setStorage({
+        data: _this.data.personArray,
+        key: 'personArray',
       })
     });
     const peopleNum = 2;
@@ -57,8 +67,17 @@ Page({
     for(let i=0;i<peopleNum;i++){
       peopleArray.push(people);
     }
-    this.setData({
+    _this.setData({
       personArray:peopleArray
+    })
+  },
+  /**
+   * 
+   * @param {*} e 
+   */
+  goToAdd(){
+    wx.navigateTo({
+      url: 'addLv/addLv',
     })
   },
   /**
@@ -142,9 +161,9 @@ Page({
       if(app.globalData.userInfo){
         // let userid = app.globalData.userInfo.userid;
         let userid = this.data.userid;//12345678991  430781199812120524
-        const pages = getCurrentPages();
-        const perpage = pages[pages.length - 1];
-        perpage.onLoad(perpage.options);
+        // const pages = getCurrentPages();
+        // const perpage = pages[pages.length - 1];
+        // perpage.onLoad(perpage.options);
         if(userid){
           wx.request({
             url: 'http://47.104.191.228:8086/rv/create?userId='+userid,

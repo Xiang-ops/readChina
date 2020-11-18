@@ -1,35 +1,39 @@
 {
-  "pages":[
+  "pages": [
     "pages/orderVerify/orderVerify",
+    "pages/orderVerify/addLv/addLv",
+    
     "pages/index/index",
     "pages/shopDetails/shopDetails",
     "pages/shopDetails/orderDetails/orderDetails",
-    
     "pages/home/home",
     "pages/my/my",
     "pages/home/search/search",
     "pages/home/result/result"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFBE5A",
     "navigationBarTitleText": "读见中国",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor":"#FFC060",
-    "color":"#202020",
-    "list": [{
-      "iconPath":"./img/home.png",
-      "selectedIconPath":"./img/homeSelect.png",
-      "pagePath": "pages/home/home",
-      "text": "首页"
-    }, {
-      "iconPath":"./img/my.png",
-      "selectedIconPath":"./img/mySelect.png",
-      "pagePath": "pages/my/my",
-      "text": "我的"
-    }]
+    "selectedColor": "#FFC060",
+    "color": "#202020",
+    "list": [
+      {
+        "iconPath": "./img/home.png",
+        "selectedIconPath": "./img/homeSelect.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "iconPath": "./img/my.png",
+        "selectedIconPath": "./img/mySelect.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

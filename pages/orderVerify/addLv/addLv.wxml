@@ -1,0 +1,24 @@
+<!--pages/orderVerify/addLv/addLv.wxml-->
+<view class="addLv">
+  <form bindsubmit="submitLvInfo">
+    <view class="orderName">    
+        <view class="orderLine">
+          <view>姓名</view>
+          <input placeholder="与证件姓名一致" class="orderInput" name="realName" />
+        </view>
+        <view class="orderLine">
+          <view>证件类型</view>
+          <input class="orderInput" disabled value="居民身份证" ></input>
+        </view>
+        <view class="orderLine">
+          <view>身份证号</view>
+          <input class="orderInput"  name="rvIdCard" placeholder="与乘车证件一致"/>
+        </view>
+        <view class="orderLine">
+          <view>手机号码</view>
+          <input  class="orderInput"  name="phone"  placeholder="请准确填写手机号"/>
+        </view>   
+    </view>
+    <button class="btnSubmit" formType="submit">提交</button>
+  </form>
+</view>

@@ -1,0 +1,43 @@
+.addLv{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.orderName{
+  width: 95%;
+  background-color: #fff;
+  margin-top: 20rpx;
+  margin-left: 2%;
+  border-radius: 20rpx;
+}
+.orderLine{
+  width: 100%;
+  display: flex;
+  justify-items: stretch;
+  height: 110rpx;
+  border-bottom: 3rpx solid #EAEAEA;
+  padding-left: 21rpx;
+  line-height: 110rpx;
+  display:flex;
+  color:#050202;
+}
+.orderLine>view{
+  width: 20%;
+  color: #aaa;
+}
+.orderInput{
+  width: 60%;
+  height:110rpx;
+  text-align: center;
+  color: #050202;
+}
+.btnSubmit{
+  height: 80rpx;
+  margin-top: 15rpx;
+  border-radius: 40rpx;
+  color:#fff;
+  background-color: #FFBE5A;
+  box-shadow: 0px 2px 2px #FFBE5A,0px 2px 2px #FFBE5A;
+}
