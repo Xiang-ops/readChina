@@ -1,9 +1,8 @@
 {
   "pages": [
+    "pages/index/index",    
     "pages/orderVerify/orderVerify",
     "pages/orderVerify/addLv/addLv",
-    
-    "pages/index/index",
     "pages/shopDetails/shopDetails",
     "pages/shopDetails/orderDetails/orderDetails",
     "pages/home/home",

@@ -19,7 +19,7 @@
   font-size: 30rpx;
 }
 .lvBody{
-  width:735rpx;
+  width:700rpx;
   margin: 15rpx auto;
   background:#fff;
   border-radius: 15rpx;
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 110rpx;
+  height: 90rpx;
   border-bottom: 3rpx solid #EAEAEA;
 }
 .arrowLeft{
@@ -66,46 +66,15 @@
 
 .orderLine{
   width: 100%;
-  display: flex;
-  justify-items: stretch;
-  height: 63rpx;
+  height: 113rpx;
   border-bottom: 3rpx solid #EAEAEA;
   padding-left: 21rpx;
-  line-height: 63rpx;
   display:flex;
+  align-items: center;
   font-size:24rpx;
-  color:#050202;
+  color:#555;
 }
-.orderLine>view{
-  width: 20%;
-}
-.orderInput{
-  width: 80%;
-  height:63rpx;
-  text-align: center;
-}
-.orderName{
 
-}
-.modalArray{
-  background-color: #fff;
-  display: flex;
-  z-index: 100;
-  width: 100%;
-  height: 252rpx;
-  position: absolute;
-  left: 15rpx;
-  font-size: 24rpx;
-}
-.modalPerson{
-  width: 100%;
-  display: grid;
-  grid-template-columns:15% 43% 32% 10%;
-  height: 66rpx;
-  line-height: 66rpx;
-  text-align: center;
-  border-bottom: 3rpx solid #EAEAEA;
-}
 .lxrInfo{
   width:735rpx;
   margin: 38rpx auto;
@@ -121,8 +90,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* position: absolute;
+  left: 16rpx; */
+}
+.checkBox{
   position: absolute;
-  right: 16rpx;
+  right: 50rpx;
 }
 .addBtn{
   width: 100%;

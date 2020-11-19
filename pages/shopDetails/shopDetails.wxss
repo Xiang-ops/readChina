@@ -10,6 +10,7 @@ background-color: #fff;
 }
 .detailTitle{
   width:697rpx;
+  height: 140rpx;
   font-size: 33rpx;
   color:white;
   position: absolute;
@@ -18,7 +19,6 @@ background-color: #fff;
 }
 .detailInfo{
   width:750rpx;
-  height:228rpx;
   padding-left: 26rpx;
   padding-top:18rpx;
   font-weight: bold;

@@ -7,7 +7,7 @@
   </swiper>
   <view  class="detailTitle">
   <view>{{detailData.spuName}}</view>
-  <view style="margin-top:15rpx;">{{detailData.desc}}</view>
+  <view style="margin-top:10rpx;height:100%;display:-webkit-box;webkit-line-clamp:2;overflow:hidden;text-overflow:ellipsis;">{{detailData.desc}}</view>
   </view>
   
   <view class="detailInfo">

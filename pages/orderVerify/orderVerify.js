@@ -7,13 +7,10 @@ Page({
    */
   data: {
     personArray:[],
-    subPersonArray:[],
-    disable:-1,
     userid:0,
     addShow:false,
     addIndex:1,
     lxrPhone:'',
-    hideDown:false,
   },
 
   /**
@@ -30,9 +27,10 @@ Page({
       lxrPhone = '15873889873'
     }
     this.setData({
-      lxrPhone:lxrPhone
+      lxrPhone:lxrPhone,
+      addIndex:1,
+      userid:userid
     })
-    console.log(app.globalData.userInfo);
     const _this = this;
     wx.getStorage({
       key: 'skuInfo',
@@ -46,10 +44,6 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    _this.setData({
-      userid:userid,
-      addIndex:1,
-    })
     _this.getLvInfo(_this.data.userid).then((res)=>{
       console.log(res);
       _this.setData({
@@ -60,12 +54,9 @@ Page({
         key: 'personArray',
       })
     });
-    const peopleNum = 2;
-    let peopleArray = [];
-    let people = {
-    };
-    for(let i=0;i<peopleNum;i++){
-      peopleArray.push(people);
+    var peopleArray = _this.data.personArray;
+    for(let i=0;i<peopleArray.length;i++){
+      peopleArray[i].flag = false;
     }
     _this.setData({
       personArray:peopleArray
@@ -81,23 +72,26 @@ Page({
     })
   },
   /**
-   * 下拉框
+   * 选择旅客
    */
-  dropDown(e){
-    const _this = this;
-    if(this.data.personArray.length>0){
-      _this.setData({
-        hideDown:true,
-      })
-    }
+  checkOn(e){
+    var index = e.currentTarget.dataset.index;
+    console.log(index);
+    var _this = this;
+    var array = _this.data.personArray;
+    array[index].flag = !(array[index].flag);
+    _this.setData({
+      personArray:array,
+    })
   },
   /**
    * 编辑
    * @param {index} userid 
    */
   edit(e){
-    this.setData({
-      disable:e.currentTarget.dataset.index
+    var index = e.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: 'addLv/addLv?index='+index,
     })
   },
   /**
@@ -209,44 +203,7 @@ Page({
   updateInfo(e){
     const _this = this;
     if(this.data.disable>-1){
-      let offset = this.data.personArray[this.data.disable]['offset'];
-      console.log(offset);
-      let array = e.detail.value;
-      // console.log("e========================>",e);
-      if(app.globalData.userInfo){
-        let userid = app.globalData.userInfo.userid;
-        // let userid = 38525052;//12345678991  430781199812120524
-        if(userid){
-          wx.request({
-            url: 'http://47.104.191.228:8086/rv/edit?userId='+userid,
-            method: 'POST',
-            header: {
-              "Content-type": "application/json"
-            },
-            data:{
-              "phone":array.phone, //,
-              "realName":array.realName ,//,
-              "rvIdCard": array.rvIdCard, //,
-              "status":1,
-              "userId":userid,
-              "offset": offset,
-            },
-            success: (res)=>{
-              console.log(res);
-              const pages = getCurrentPages()
-              //声明一个pages使用getCurrentPages方法
-              const perpage = pages[pages.length - 1]
-              //声明一个当前页面
-              perpage.onLoad() 
-              // if(res.data===1){
-              //   wx.showToast({
-              //     title: '创建成功',
-              //   })
-              // }
-            }
-          })
-        }
-      }
+      
     }
   },
   /**
@@ -291,6 +248,14 @@ Page({
   submitOrder(e){
     let userid = this.data.userid;
     let detailData = this.data.detailData;
+    let lvInfoData = [];
+    console.log("personArray============>",this.data.personArray);
+    for(let i=0;i<this.data.personArray.length;i++){
+      if(this.data.personArray[i].flag){
+        lvInfoData.push(this.data.personArray[i].rvIdCard);
+      }
+    }
+    console.log("选择的旅客人===========》",lvInfoData.toString());
     wx.request({
       url: 'http://47.104.191.228:8086/orders/create?userId='+userid,
       method:"POST",
@@ -298,7 +263,7 @@ Page({
         "Content-type": "application/json"
       },
       data:{
-        "payInfo": "43132120001207576X,123",
+        "payInfo": lvInfoData.toString(),
         "payPrice": detailData.originPrice,
         "payType": 0,
         "productNum": 0,
