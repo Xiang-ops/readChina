@@ -58,6 +58,12 @@ Page({
         _this.setData({
           teamData:res.data
         })
+        var skuInfo = this.data.teamData[0];
+        console.log(skuInfo);
+        wx.setStorage({
+          data: skuInfo,
+          key: 'skuInfo',
+        })
         setTimeout(()=>{
           wx.hideLoading();
         },500);
@@ -125,6 +131,7 @@ Page({
     console.log(e);    
     var index = e.currentTarget.dataset.index;
     var skuInfo = this.data.teamData[index];
+    console.log(skuInfo);
     wx.setStorage({
       data: skuInfo,
       key: 'skuInfo',

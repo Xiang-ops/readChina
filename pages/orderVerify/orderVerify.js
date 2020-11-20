@@ -266,7 +266,7 @@ Page({
         "payInfo": lvInfoData.toString(),
         "payPrice": detailData.originPrice,
         "payType": 0,
-        "productNum": 0,
+        "productNum":lvInfoData.length,
         "skuId": detailData.skuId,
         "skuName": detailData.skuName,
         "spuId": detailData.spuId,
