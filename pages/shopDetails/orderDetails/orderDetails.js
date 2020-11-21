@@ -58,12 +58,15 @@ Page({
         _this.setData({
           teamData:res.data
         })
-        var skuInfo = this.data.teamData[0];
-        console.log(skuInfo);
-        wx.setStorage({
-          data: skuInfo,
-          key: 'skuInfo',
-        })
+        if(_this.data.teamData.length>0){
+          var skuInfo = _this.data.teamData[0];
+          console.log(skuInfo);
+          wx.setStorage({
+            data: skuInfo,
+            key: 'skuInfo',
+          })
+        }
+        
         setTimeout(()=>{
           wx.hideLoading();
         },500);
@@ -164,9 +167,18 @@ Page({
    * 跳转到确认订单页面
    */
   goToVerify(){
-    wx.navigateTo({
-      url: '../../orderVerify/orderVerify',
-    })
+    if(this.data.teamData.length>0){
+      wx.navigateTo({
+        url: '../../orderVerify/orderVerify',
+      })
+    }
+    else{
+      wx.showModal({
+        title: '提示',
+        content: '该商品已下架'
+      })
+    }
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
