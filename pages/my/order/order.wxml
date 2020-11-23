@@ -1,0 +1,15 @@
+<!--pages/my/order/order.wxml-->
+<view class="list">
+  <view class="li" wx:for="{{list}}" wx:key="{{item}}">
+    <view class="status">交易状态:{{item.status}}</view>
+    <view class="content">
+      <view class="title">订单{{item.orderId}}</view>
+      <view class="info">支付方式：{{item.payType}}</view>
+      <view class="info">创建时间：{{item.createTime}}</view>
+      <view class="info">商品个数：{{item.productNum}}</view>
+      <view class="info">参报价格：￥{{item.totalPrice}}</view>                     
+      <view class="price">￥{{item.payPrice}}</view>
+    </view>
+  </view>
+</view>
+<image src="../../../img/noData.png" hidden="{{!noData}}" class="noData"></image>

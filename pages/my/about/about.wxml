@@ -1,0 +1,31 @@
+<!--pages/my/about/about.wxml-->
+<view class="main">
+  <view class="mainImg">
+    <image src="../../../img/aboutUs.png"></image>
+  </view>
+  <view class="content">
+    读见中国微信小程序是国内首款乡村房车旅游一体化服务的平台， 平台以房车+乡村旅游为核心、依托景区地域特色文化、通过“新媒体”平台运营推广。在大自然、原生态的乡村短途游中通过优质的服务内容，打造全国首家房车乡村旅游一站式电商服务平台，开拓全新的特色乡村游。
+  </view>
+  <view class="wx">
+    <image class="icon" src="../../../img/wx.png"></image>
+    官方微信公众号：读见好书
+  </view>
+  <view class="wb">
+    <image class="icon" src="../../../img/wb.png"></image>
+    官方新浪微博：旅行的书屋
+  </view>
+</view>
+<view class="extra">
+  <view class="nav">
+    读见中国商标说明
+    <image src="../../../img/to.png"></image>
+  </view>
+  <view class="nav">
+    读见中国商城平台服务协议
+    <image src="../../../img/to.png"></image>
+  </view>
+  <view class="nav">
+    读见中国服务协议
+    <image src="../../../img/to.png"></image>
+  </view>
+</view>

@@ -1,5 +1,6 @@
 // pages/home/result/result.js
 const app=getApp();
+
 Page({
 
   /**
@@ -15,20 +16,40 @@ Page({
       url: '../../shopDetails/shopDetails?spu_id='+spu_id,
     })
   },
-  getResult: function (info) {
-    console.log(info)
+  getDesResult: function (desctination) {
     return new Promise(function (resolve, reject) {
       wx.request({
-        url: 'http://47.104.191.228:8086/sku/get/goods/desctination',
+        url: 'http://47.104.191.228:8086/spu/get/goods/desctination',
         method: "GET",
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
         data: {
-          destination: info.toPlace,
+          destination: desctination,
           userId:app.globalData.userInfo.userid
         },
         success: function (res) {
+          resolve(res.data)
+        },
+        fail: function (res) {
+          console.log("登录失败")
+          console.log(res)
+        }
+      })
+    })
+  },
+  getDateResult:function(days){
+    var userId=app.globalData.userInfo.userid;
+    console.log(days)
+    return new Promise(function (resolve, reject) {
+      wx.request({
+        url: 'http://47.104.191.228:8086/spu/get/goods/date?date='+days+"&userId="+userId,
+        method: "GET",
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        success: function (res) {
+          console.log(res)
           resolve(res.data[0])
         },
         fail: function (res) {
@@ -42,12 +63,43 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var searchInfo=JSON.parse(options.searchInfo)
-    this.getResult(searchInfo).then((res)=>{
-      this.setData({
-        searchInfo:searchInfo,
-        result:res
-      })
+    var that=this;
+    var searchInfo=JSON.parse(options.searchInfo);
+    if(searchInfo.days=="行程天数(选填)"||searchInfo.days=="不限"){
+      searchInfo.days="不限";
+    }
+    that.setData({
+      searchInfo:searchInfo
+    })
+    that.getDesResult(searchInfo.toPlace).then((res)=>{
+      if(res.length==0){
+        if(searchInfo.days=="不限"){
+          wx.showToast({
+            title: '暂无数据',
+            icon:'none',
+            duration:1000
+          })
+        }else{
+          searchInfo.days=parseInt(searchInfo.days);
+          that.getDateResult(searchInfo.days).then((res)=>{
+            if(res.length==0){
+              wx.showToast({
+                title: '暂无数据',
+                icon:'none',
+                duration:1000
+              })
+            }else{
+              that.setData({
+                result:res
+              })
+            }
+          })
+        }
+      }else{
+        that.setData({
+          result:res
+        })
+      }
     })
   },
 

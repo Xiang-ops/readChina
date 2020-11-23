@@ -20,7 +20,7 @@
         <view class="size">情侣</view>
         <view class="size">亲子</view>
       </view>
-      <view class="price">￥{{item.originPrice}}</view>
+      <view class="price">￥{{item.price}}</view>
       <view class="collectionInfo">12人收藏</view>
     </view>
   </view>

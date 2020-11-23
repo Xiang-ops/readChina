@@ -9,7 +9,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    banner: ['../../img/banner1.jpg', '../../img/banner2.jpg', '../../img/banner3.jpg'],
+    banner: ['../../img/banner1.png', '../../img/banner2.png', '../../img/banner3.png'],
     fromPlace:"长沙市",
     toPlace:"",
     optionList:[
@@ -82,7 +82,70 @@ Page({
       name:"张家界",
       url:"../../img/about.png"
     },
-    routes:null
+    routes:null,
+    // 上拉刷新
+    list:[],
+    timer: null, // 保存定时器
+    scrollTop: 5 // 设定触发条件的距离
+  },
+  // 上拉加载
+  onPullDownRefresh() {
+  // 监听该页面用户下拉刷新事件
+  // 可以在触发时发起请求，请求成功后调用wx.stopPullDownRefresh()来结束下拉刷新
+    console.log('下拉拉拉')
+  },
+  refresh() { // 函数式触发开始下拉刷新。如可以绑定按钮点击事件来触发下拉刷新
+    wx.startPullDownRefresh({
+      success(errMsg) {
+        console.log('开始下拉刷新', errMsg)
+      },
+      complete() {
+        console.log('下拉刷新完毕')
+      }
+    })
+  },
+  scrollFn(e) { 
+  // 防抖，优化性能
+  // 当滚动时，滚动条位置距离页面顶部小于设定值时，触发下拉刷新
+  // 通过将设定值尽可能小，并且初始化scroll-view组件竖向滚动条位置为设定值。来实现下拉刷新功能，但没有官方的体验好
+    clearTimeout(this.timer)
+    if (e.detail.scrollTop < this.data.scrollTop) {     
+      this.timer = setTimeout( () => {
+        this.refresh()
+      }, 100)
+    }
+  },
+  loadMore() { // 触底加载更多
+    var that=this;
+    var routes=that.data.routes;
+    var isLen=routes.length-that.data.list.length
+    if(isLen==0){
+      wx.showToast({
+        title: '到底了！',
+        icon: 'none',
+        duration: 1000
+      })
+    }else{
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 1000,
+        success:function(){
+          if(isLen<6){
+            var len=isLen;
+          }else{
+            var len=6;
+          }
+          let nowLen=that.data.list.length;
+          for(let i = 0; i< len; i++) {
+            that.data.list.push(routes[nowLen+i]);
+            that.setData({
+              'list': that.data.list
+            })
+          }
+        }
+      })
+    }  
   },
   toSearch(){
     wx.navigateTo({
@@ -250,11 +313,11 @@ Page({
     this.getRoad().then((res)=>{
       console.log(res)
       this.setData({
-        routes:res
+        routes:res,
+        list:res.slice(0,6)
       })
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

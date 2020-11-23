@@ -1,0 +1,52 @@
+/* pages/my/about/about.wxss */
+.main{
+  background-color: #fff;
+  padding: 45rpx;
+  color: #282828;
+  font-size: 26rpx;
+}
+.mainImg{
+  width: 100%;
+  text-align: center;
+}
+.mainImg>image{
+  width: 588rpx;
+  height: 143rpx;
+}
+.content{
+  margin: 70rpx 0 40px;
+  line-height: 48rpx;
+}
+.wx,.wb{
+  height: 48rpx;
+  width: 580rpx;
+  color: #0E0D0D;
+  font-size: 30rpx;
+  line-height: 48rpx;
+}
+.wx{
+  margin-bottom: 24rpx;
+}
+.icon{
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 28rpx;
+  float: left;
+}
+.nav{
+  width: 750rpx;
+  height: 109rpx;
+  background-color: #fff;
+  margin: 9rpx 0;
+  color: #292828;
+  font-size: 30rpx;
+  line-height: 109rpx;
+  padding-left: 30rpx;
+}
+.nav>image{
+  width: 22rpx;
+  height: 36rpx;
+  margin-top: 34rpx;
+  position: absolute;
+  right:36rpx;
+}

@@ -14,14 +14,15 @@
     <view class="top"></view>
     <view class="content">
       <view class="position">
-        <image src="../../img/position.png" class="icon"></image>{{fromPlace}}
+        <image src="../../img/position.png" class="icon"></image>搜索条件
+        <!-- {{fromPlace}} -->
       </view>
       <view class="search" bindtap="toSearch">{{toPlace==""?"请输入目的地\关键字":toPlace}}</view>
       <view class="days" bindtap="showModal">{{value}}</view>
       <button class="btn" bindtap="toResult">搜索</button>
     </view>
   </view>
-  <view class="hotSpots">
+  <!-- <view class="hotSpots">
     <view class="title">热门景点</view>
     <view class="content">
       <view class="leftSpot">
@@ -39,22 +40,25 @@
         </view>  
       </view>
     </view>
-  </view>
+  </view> -->
   <view class="hotRoutes">
     <view class="title">热门路线</view>
-    <view class="list">
-      <view class="li" wx:for="{{routes}}" wx:key="*this" bindtap="toDetail" data-id="{{item.spuId}}">
-        <image src="{{item.banner}}" class="img"></image>
-        <input value="{{item.spuName}}" class="name"/>
+    <!-- 上拉加载 -->
+    <scroll-view  style='height: 380px;' 
+    scroll-y="{{true}}" 
+    scroll-top="{{scrollTop}}"
+    bindscroll="scrollFn"
+    bindscrolltolower="loadMore"
+  >   
+      <view class="list">
+        <view class="li" wx:for="{{list}}" wx:key="*this" bindtap="toDetail" data-id="{{item.spuId}}">
+          <image src="{{item.banner}}" class="img"></image>
+          <input value="{{item.spuName}}" class="name"/>
+        </view>
       </view>
-    </view>
+  </scroll-view>
   </view>
-  <!-- 上拉加载 -->
-  <!-- <view style="transform:translate3d(0,{{childTop}}px,0)"  bindtouchmove="moveFn"  bindtouchstart="startFn" bindtouchend="endFn">
-    <view wx:for="{{routes}}" wx:key="index">
-        <view>{{ item }}<text>{{index}}</text></view>
-    </view>
-  </view> -->
+  
   <!-- modal  -->
   <view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
     <view class="modal-cancel" bindtap="hideModal"></view>

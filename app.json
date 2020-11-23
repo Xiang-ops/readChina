@@ -1,12 +1,17 @@
 {
   "pages": [
-    "pages/index/index",    
+    "pages/index/index", 
+    "pages/my/order/order",
+    "pages/my/my",
+    "pages/my/solution/solution",
+    "pages/my/set/set",
+    "pages/home/home",   
     "pages/orderVerify/orderVerify",
     "pages/orderVerify/addLv/addLv",
     "pages/shopDetails/shopDetails",
     "pages/shopDetails/orderDetails/orderDetails",
-    "pages/home/home",
-    "pages/my/my",
+    "pages/my/about/about",
+    
     "pages/home/search/search",
     "pages/home/result/result"
   ],

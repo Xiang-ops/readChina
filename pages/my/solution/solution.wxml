@@ -1,0 +1,38 @@
+<!--pages/my/solution/solution.wxml-->
+<view class="head">
+  <image src="../../../img/aboutUs.png"></image>
+</view>
+<view class="nav">
+  <view class="bigName"> 订单与商城</view>
+  <view class="smallName">订单查询、退款、优惠卷等</view>
+  <image src="../../../img/to.png"></image>
+</view>
+<view class="nav">
+  <view class="bigName">账号</view>
+  <view class="smallName">禁言、手机绑定、账号注销</view>
+  <image src="../../../img/to.png"></image>
+</view>
+<view class="nav">
+  <view class="bigName">游记</view>
+  <view class="smallName">审核、关联目的地、背景音乐等</view>
+  <image src="../../../img/to.png"></image>
+</view>
+<view class="nav">
+  <view class="bigName">问答</view>
+  <view class="smallName">问题/回答被审核、删除等</view>
+  <image src="../../../img/to.png"></image>
+</view>
+<view class="nav">
+  <view class="bigName">其他</view>
+  <view class="smallName">结伴、笔记、商家加盟等</view>
+  <image src="../../../img/to.png"></image>
+</view>
+<view class="foot">
+  <view class="title"> 读见中国服务热线：</view>
+  <view class="content">19974852284 </view>
+  <view class="title">违法和不良信息举报：  </view>
+  <view class="content">举报电话 19974852284</view>
+  <view class="content">举报邮箱  3139296255@qq.com</view>
+  <view class="content">全国旅游投诉电话</view>
+  <view class="title">对于您的反馈，我们会在1—3个工作日进行处理</view>
+</view> 

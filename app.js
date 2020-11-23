@@ -51,6 +51,7 @@ App({
   globalData: {
     userInfo: null,
     openid:null,
+    // userStatus:"login"
     userStatus:"notLogin"
   }
 })
